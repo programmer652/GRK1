@@ -1,0 +1,32 @@
+function setup() {
+  createCanvas(800,600);
+  noLoop();
+}
+function draw() {
+  //noprotect
+  background(color(200,200,255));
+  
+ for(y=0; y<height; y++)
+   for(x=0; x<width; x++) {
+     if(y<height/3 && y>abs(x-width/2)/2+40)
+     {
+     set(x, y, color(255,100,100));
+     }
+    if(y>=height/3 && x>width/4 && x<width*3/4)
+     {
+     set(x, y, color(100,50,30));
+     }
+     if(y>height*2/3)
+     {
+     set(x, y, color(0,100,0));
+     }
+   }
+   for(i=0; i<1000; i++)
+   {
+     x=floor(random(0,width));
+     y=floor(random(height*2/3+1,height));
+     set(x, y, color(random(0,255), random(0,255), random(0,255)));
+   }
+   
+  updatePixels();
+}

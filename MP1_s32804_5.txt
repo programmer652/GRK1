@@ -1,0 +1,47 @@
+function setup() {
+  createCanvas(800,600);
+  noLoop();
+}
+function draw() {
+  //noprotect
+  background(0);
+  stroke(255);
+  border=30;
+  x1=width/2;
+  y1=border;
+  x2=border;
+  y2=height-border;
+  x3=width-border;
+  y3=height-border;
+
+  point(x1,y1);
+  point(x2,y2);
+  point(x3,y3);
+
+  cx=x1;
+  cy=y1;
+  
+ for(i=0; i<90000; i++)
+   {
+    a = floor(random(0,3));
+    switch(a)
+    {
+      case 0:
+        cx=(cx+x1)/2;
+        cy=(cy+y1)/2;
+        point(cx,cy);
+        break;
+      case 1:
+       cx=(cx+x2)/2;
+        cy=(cy+y2)/2;
+        point(cx,cy);
+        break;
+      case 2:
+        cx=(cx+x3)/2;
+        cy=(cy+y3)/2;
+        point(cx,cy);
+        break;
+    }
+   }
+  updatePixels();
+}
